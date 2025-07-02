@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Calendar, Users, DollarSign, Star, CheckCircle } from 'lucide-react';
+import { Calendar, Users, CheckCircle, Star } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getTranslation } from '../utils/translations';
 
 const Booking: React.FC = () => {
   const { language, isRTL } = useLanguage();
   const t = (key: string) => getTranslation(language, key);
-  
   const [checkIn, setCheckIn] = useState('');
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState(2);
@@ -81,7 +80,7 @@ const Booking: React.FC = () => {
                       onChange={(e) => setGuests(Number(e.target.value))}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white"
                     >
-                      {[1, 2, 3, 4, 5, 6].map((num) => (
+                      {[1, 2, 3, 4, 5, 6].map(num => (
                         <option key={num} value={num}>
                           {num} {num === 1 ? 'Guest' : 'Guests'}
                         </option>
@@ -91,12 +90,13 @@ const Booking: React.FC = () => {
                 </div>
               </div>
 
-              {/* Pricing */}
+              {/* Pricing Summary */}
               <div className="bg-gray-50 rounded-xl p-6 mb-8">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-lg font-medium">Rate per night</span>
                   <span className="text-2xl font-bold text-blue-600">€180</span>
                 </div>
+                
                 <div className="space-y-2 text-sm text-gray-600">
                   <div className="flex justify-between">
                     <span>€180 × 7 nights</span>
@@ -118,7 +118,6 @@ const Booking: React.FC = () => {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
               <div className="space-y-4">
                 <button className="w-full bg-amber-500 hover:bg-amber-600 text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
                   {t('booking.bookNow')}
@@ -134,9 +133,9 @@ const Booking: React.FC = () => {
             </div>
           </div>
 
-          {/* Villa Info Sidebar */}
+          {/* Property Info Sidebar */}
           <div className="space-y-6">
-            {/* Quick Info */}
+            {/* Property Card */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <div className="flex items-center mb-4">
                 <div className="flex text-amber-400">
@@ -150,10 +149,8 @@ const Booking: React.FC = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Now We Land Villa
               </h3>
-              <p className="text-gray-600 mb-4">
-                Akrotiri, Chania, Crete
-              </p>
-
+              <p className="text-gray-600 mb-4">Akrotiri, Chania, Crete</p>
+              
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <div className="font-bold text-lg">3</div>
@@ -183,7 +180,7 @@ const Booking: React.FC = () => {
               </div>
             </div>
 
-            {/* Contact */}
+            {/* Help Card */}
             <div className="bg-blue-600 text-white rounded-2xl shadow-lg p-6">
               <h4 className="font-bold text-lg mb-4">Need Help?</h4>
               <p className="mb-4 opacity-90">
