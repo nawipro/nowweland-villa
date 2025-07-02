@@ -64,7 +64,7 @@ const ExploreArea: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {attractions.map((attraction, index) => (
-            <div
+            <div 
               key={index}
               className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:scale-[1.02]"
             >
@@ -92,7 +92,6 @@ const ExploreArea: React.FC = () => {
                 <p className={`text-gray-600 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
                   {language === 'he' ? attraction.descriptionHe : attraction.description}
                 </p>
-                
                 <div className={`flex items-center mt-4 text-blue-600 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <Clock className="w-4 h-4 mx-2" />
                   <span className="text-sm font-medium">
@@ -114,7 +113,7 @@ const ExploreArea: React.FC = () => {
               Discover pristine beaches, ancient sites, and authentic tavernas all within easy reach
             </p>
           </div>
-
+          
           <div className="bg-gray-100 rounded-xl h-64 flex items-center justify-center">
             <div className="text-center text-gray-500">
               <MapPin className="w-12 h-12 mx-auto mb-4" />
