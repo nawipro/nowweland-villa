@@ -28,28 +28,19 @@ const Hero: React.FC<HeroProps> = ({ onBookNow, onExploreMore }) => {
         <div className="animate-fade-in-up">
           <h1 
             className={`text-5xl md:text-7xl font-bold mb-6 ${isRTL ? 'font-hebrew' : 'font-playfair'}`}
-            style={{ 
-              textShadow: '0 0 8px rgba(0,0,0,0.45)',
-              color: '#FFFFFF'
-            }}
+            style={{ textShadow: '0 0 8px rgba(0,0,0,0.45)', color: '#FFFFFF' }}
           >
             {t('hero.title')}
           </h1>
           <p 
             className="text-xl md:text-2xl mb-4 opacity-90 font-light"
-            style={{ 
-              textShadow: '0 0 8px rgba(0,0,0,0.45)',
-              color: '#FFFFFF'
-            }}
+            style={{ textShadow: '0 0 8px rgba(0,0,0,0.45)', color: '#FFFFFF' }}
           >
             {t('hero.subtitle')}
           </p>
           <p 
             className="text-lg mb-8 opacity-80 max-w-2xl mx-auto"
-            style={{ 
-              textShadow: '0 0 8px rgba(0,0,0,0.45)',
-              color: '#FFFFFF'
-            }}
+            style={{ textShadow: '0 0 8px rgba(0,0,0,0.45)', color: '#FFFFFF' }}
           >
             {t('hero.description')}
           </p>
@@ -72,14 +63,14 @@ const Hero: React.FC<HeroProps> = ({ onBookNow, onExploreMore }) => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
+            <button 
               onClick={onBookNow}
               className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 transform"
               style={{ textShadow: 'none' }}
             >
               {t('hero.bookNow')}
             </button>
-            <button
+            <button 
               onClick={onExploreMore}
               className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-xl"
               style={{ textShadow: 'none' }}
@@ -90,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ onBookNow, onExploreMore }) => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="animate-bounce cursor-pointer" onClick={onExploreMore}>
           <ChevronDown size={32} className="text-white opacity-70 hover:opacity-100 transition-opacity" />
