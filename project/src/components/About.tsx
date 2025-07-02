@@ -1,33 +1,16 @@
 import React from 'react';
-import { Waves, Trees, Sunset, Home } from 'lucide-react';
+import { Home, Trees, Waves, Sunset } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getTranslation } from '../utils/translations';
 
 const About: React.FC = () => {
   const { language, isRTL } = useLanguage();
-  const t = (key: string) => getTranslation(language, key);
-
+  
   const features = [
-    {
-      icon: <Home className="w-8 h-8" />,
-      title: 'Private Pool',
-      color: 'text-blue-600'
-    },
-    {
-      icon: <Trees className="w-8 h-8" />,
-      title: 'Garden & BBQ',
-      color: 'text-green-600'
-    },
-    {
-      icon: <Waves className="w-8 h-8" />,
-      title: 'Hidden Bay Access',
-      color: 'text-cyan-600'
-    },
-    {
-      icon: <Sunset className="w-8 h-8" />,
-      title: 'Sunset Views',
-      color: 'text-amber-600'
-    }
+    { icon: <Home className="w-8 h-8" />, title: 'Private Pool', color: 'text-blue-600' },
+    { icon: <Trees className="w-8 h-8" />, title: 'Garden & BBQ', color: 'text-green-600' },
+    { icon: <Waves className="w-8 h-8" />, title: 'Hidden Bay Access', color: 'text-cyan-600' },
+    { icon: <Sunset className="w-8 h-8" />, title: 'Sunset Views', color: 'text-amber-600' }
   ];
 
   return (
@@ -59,15 +42,12 @@ const About: React.FC = () => {
               <p className="text-xl text-gray-800 font-light italic leading-relaxed">
                 Where every colour of the sky finds its echo in the water.
               </p>
-              
               <p className="text-lg text-gray-700 leading-relaxed">
                 Perched above a hidden turquoise cove on Crete's Akrotiri Peninsula, Now We Land is a boutique stone villa made for slow mornings, golden afternoons and star-washed evenings. Just 90 metres from the sea and only 14 minutes from Chania Airport, it offers a 43 m² private pool, hand-built stone pathways through fragrant gardens, and uninterrupted sunset views over the Aegean.
               </p>
-              
               <p className="text-lg text-gray-700 leading-relaxed">
                 The master bedroom opens onto a large enclosed terrace that can host two extra fold-out beds – comfortably sleeping up to eight guests.
               </p>
-              
               <p className="text-lg text-gray-700 leading-relaxed">
                 Thoughtfully designed for families, couples and close-knit groups, the villa blends authentic Cretan architecture with curated modern comfort—so you can savour the quiet, the colours and the company that matter most.
               </p>
@@ -77,15 +57,13 @@ const About: React.FC = () => {
             <div className="grid grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <div 
-                  key={index}
+                  key={index} 
                   className="group p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 border border-gray-100"
                 >
                   <div className={`${feature.color} mb-3 group-hover:scale-110 transition-transform duration-300`}>
                     {feature.icon}
                   </div>
-                  <h3 className="font-semibold text-gray-800">
-                    {feature.title}
-                  </h3>
+                  <h3 className="font-semibold text-gray-800">{feature.title}</h3>
                 </div>
               ))}
             </div>
